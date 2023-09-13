@@ -1,0 +1,19 @@
+{
+  "name": "evernote",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "description": "test framework for evernote",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js test"
+  },
+  "author": "irina Menshova",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^9.5.1",
+    "@playwright/test": "^1.37.1"
+  },
+  "dependencies": {
+    "ts-node": "^10.9.1"
+  }
+}
