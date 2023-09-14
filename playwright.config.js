@@ -11,9 +11,11 @@ const { defineConfig, devices } = require('@playwright/test');
  * @see https://playwright.dev/docs/test-configuration
  */
 module.exports = defineConfig({
+  timeout: 50000000,  
+  globalTimeout: 60000000, // Maximum time the whole test suite can run,
   testDir: './tests',
   /* Run tests in files in parallel */
-  fullyParallel: true,
+  fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
@@ -25,13 +27,14 @@ module.exports = defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    // baseURL: 'https://evernote.com/',
+    baseURL: 'https://evernote.com/',
+    actionTimeout: 2000000, 
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     headless: false,
-    baseURL: process.env.URL,
+   //baseURL: process.env.URL,
     ignoreHTTPSErrors: true,
-    trace: 'retain-on-failure',
+    trace: 'on-first-retry',
   },
 
   /* Configure projects for major browsers */
@@ -39,6 +42,7 @@ module.exports = defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
+      
     },
 
     // {

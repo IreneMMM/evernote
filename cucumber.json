@@ -6,11 +6,11 @@
         "paths": [
             "src/test/features/"
         ],
-        "dryRun": true,
+        "dryRun": false,
         "require": [
             "src/test/steps/*.js"
-        ],
-        "requireModule": ["ts-node/register"]
+        ]
+        
     }
 }
 

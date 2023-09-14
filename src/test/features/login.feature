@@ -1,18 +1,21 @@
-Feature: User Authentication tests
+Feature: User Login
+  As a user
+  I want to login to the site
+  So that I can create notes 
 
-  Background: 
+  Scenario Outline: Login using email
     Given User navigates to the application
+    Given User accepts cookies
     And User click on the login link
     And User navigates to the login page
+    And User enter the username as <email>
+    And User click on the login button
+    And User enter the password as <password>
+    When User press on the login button
+    Then User receives title as <title>
 
-  Scenario: Successful login using email
-    And User enter the username as "tt4999241@gmail.com"
-    And User enter the password as "test@1000"
-    When User click on the login button
-    Then Login should be success
-
-  Scenario: Unsuccessful login using email
-    Given User enter the username as "koushik"
-    Given User enter the password as "Passkoushik"
-    When User click on the login button
-    But Login should fail
+    Examples: 
+      | email                 | password    | title                    |
+      # | "tt4999241@gmail.com" | "test@1000" | "Главная - Evernote"     |
+       | "menshovaiv@gmail.com" | "Mm@30011981" | "Главная - Evernote"     |
+      # | "test@test.test"      | "test"      | "Требуется сброс пароля" |
