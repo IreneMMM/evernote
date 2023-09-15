@@ -5,13 +5,19 @@
   "description": "test framework for evernote",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js test npx playwright show-report"
+    "test": "cucumber-js" 
+
   },
+  "cucumber-html-reporter": {
+    "jsonFolder": "cucumber-report",
+    "reportFolder": "cucumber-report"
+  }, 
   "author": "irina Menshova",
   "license": "ISC",
   "devDependencies": {
     "@cucumber/cucumber": "^9.5.1",
-    "@playwright/test": "^1.37.1"
+    "@playwright/test": "^1.37.1",
+    "cucumber-html-reporter": "^7.1.1"
   },
   "dependencies": {
     "chai": "^4.3.8",
