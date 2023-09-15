@@ -10,7 +10,7 @@ exports.HomePage = class HomePage {
         this.userNav = page.locator("#qa-NAV_USER");
         this.frame = page.frameLocator('#qa-COMMON_EDITOR_IFRAME');
         this.noteBody = page.frameLocator('#qa-COMMON_EDITOR_IFRAME').locator("#en-note");
-        this.noteTitle = page.frameLocator('#qa-COMMON_EDITOR_IFRAME').locator("textarea.dSbRl");
+        this.noteTitle = page.frameLocator('#qa-COMMON_EDITOR_IFRAME').locator("//textarea[contains(@class,'dSbRl')]");
         this.userMenu = page.locator("#qa-USER_PORTRAIT").first();
         this.logoutLink = page.locator("#qa-ACCOUNT_DROPDOWN_LOGOUT");
         // этот локатор падает
@@ -32,9 +32,5 @@ exports.HomePage = class HomePage {
     async chooseNote() {
         await this.allNotesButton.click({timeout: 150000});
         await this.lastNote.click();
-    }
-
-    async getTextFromNoteName() {
-        return await this.page.frameLocator('#qa-COMMON_EDITOR_IFRAME').locator("textarea.dSbRl").textContent();
     }
 };
