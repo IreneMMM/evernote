@@ -13,7 +13,8 @@ exports.HomePage = class HomePage {
         this.noteTitle = page.frameLocator('#qa-COMMON_EDITOR_IFRAME').locator("textarea.dSbRl");
         this.userMenu = page.locator("#qa-USER_PORTRAIT").first();
         this.logoutLink = page.locator("#qa-ACCOUNT_DROPDOWN_LOGOUT");
-        this.allNotesButton = page.locator('//*[@id="qa-HOME_WIDGET_HEADER_Notes_2|0_0|0_C27R04|13"]/h2');
+        // этот локатор падает
+        this.allNotesButton = page.locator('//button[contains(@id, "qa-HOME_WIDGET_HEADER_Notes")]');
         this.lastNote = page.locator("//button[contains(@id, 'qa-NOTES_SIDEBAR_NOTE')]").first();
     }
 
@@ -29,7 +30,7 @@ exports.HomePage = class HomePage {
     }
 
     async chooseNote() {
-        await this.allNotesButton.click();
+        await this.allNotesButton.click({timeout: 150000});
         await this.lastNote.click();
     }
 
