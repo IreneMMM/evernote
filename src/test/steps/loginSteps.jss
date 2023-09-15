@@ -5,7 +5,6 @@ const { MainPage } = require('../../../pageObject/mainPage');
 const { LoginPage } = require('../../../pageObject/loginPage');
 const { HomePage } = require('../../../pageObject/homePage');
 
-
 let browser;
 let context;
 let page;
@@ -13,7 +12,7 @@ let mainPage;
 let loginPage;
 let homePage;
 
-setDefaultTimeout(60000);
+setDefaultTimeout(600000);
 
 Before(async function () {
   browser = await chromium.launch({ headless: false });

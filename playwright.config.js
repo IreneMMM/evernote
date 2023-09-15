@@ -1,4 +1,4 @@
-// @ts-check
+const { PlaywrightTestConfig } = require('@playwright/test');
 const { defineConfig, devices } = require('@playwright/test');
 
 /**
@@ -11,8 +11,8 @@ const { defineConfig, devices } = require('@playwright/test');
  * @see https://playwright.dev/docs/test-configuration
  */
 module.exports = defineConfig({
-  timeout: 3000000,
-  testDir: 'tests',
+  timeout: 300000,
+  testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -22,16 +22,16 @@ module.exports = defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [["list"], ["html"]],
+  reporter: [["list"], ["html"], ['allure-playwright']],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    viewport: { width: 1280, height: 720 },      
+    viewport: { width: 1920, height: 1440 },      
     video: 'on-first-retry',
     baseURL: 'https://evernote.com/',
     actionTimeout: 10 * 10000, 
     ignoreHTTPSErrors: true,
     trace: 'on-first-retry',
-    launchOptions: {slowMo: 500,},
+    launchOptions: {slowMo: 500, },
   },
 
   /* Configure projects for major browsers */

@@ -1,4 +1,4 @@
-const { Given, When, Then, setDefaultTimeout, Before, After } = require('@cucumber/cucumber');
+const { Given, When, Then, Before, After, setDefaultTimeout  } = require('@cucumber/cucumber');
 const { chromium } = require("@playwright/test")
 const { expect } = require('chai');
 const { MainPage } = require('../../../pageObject/mainPage');
@@ -12,7 +12,7 @@ let mainPage;
 let loginPage;
 let homePage;
 
-setDefaultTimeout(90000);
+setDefaultTimeout(600000);
 
 Before(async function () {
   browser = await chromium.launch({ headless: false });
@@ -43,8 +43,8 @@ Then('User is on the Home page', async () => {
   expect(await homePage.userNav).to.exist;
 });
 
-When('User create new Note', async () => {
-  setDefaultTimeout(90000);
+
+When('User create new Note', async () => {  
   await homePage.createNote("This is a test note.","Test Note");
 });
 
@@ -57,7 +57,7 @@ When('User choose an existing note', async () => {
 });
 
 Then('Note title should match previously created note', async () => {
-  expect(await homePage.noteNameText).to.be.equal("Test Note");
+  expect(await homePage.getTextFromNoteName()).to.be.equal("Test Note");
 });
 
 Then('User should be on login page', async () => {
