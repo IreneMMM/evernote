@@ -58,8 +58,8 @@ When('User choose an existing note', async () => {
 
 Then('Note title should match previously created note', async () => {
   const firstResult = await page.frameLocator('#qa-COMMON_EDITOR_IFRAME').locator("//textarea[contains(@class,'dSbRl')]");
-  console.log(await firstResult.inputValue());
-  expect(await firstResult.inputValue()).to.eql("Test Note");
+  const text = await firstResult.inputValue();
+  expect(await text).to.eql("Test Note");
 });
 
 Then('User should be on login page', async () => {

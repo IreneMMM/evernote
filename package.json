@@ -5,12 +5,6 @@
   "description": "test framework for evernote",
   "main": "index.js",
   "scripts": {
-    "allure:generate": "npx allure generate ./allure-results --clean",
-    "allure:open": "npx allure open ./allure-report",
-    "allure:serve": "npx allure serve",
-    "allure-reports": "node_modules/.bin/allure generate ./reports/allure/allure-results/  -o ./reports/allure/allure-report/ --clean && allure open ./reports/allure/allure-report",
-    "posttest": "npm run allure:generate",
-    "allure": "allure serve reports/allure-results",
     "test": "cucumber-js"
   },
   "cucumber-html-reporter": {
