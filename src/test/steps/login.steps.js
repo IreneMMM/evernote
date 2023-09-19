@@ -12,12 +12,13 @@ let mainPage;
 let loginPage;
 let homePage;
 
-setDefaultTimeout(600000);
+
 
 Before(async function () {
   browser = await chromium.launch({ headless: false });
   context = await browser.newContext();
   page = await context.newPage();
+  page.setDefaultTimeout(process.env.DEFAULT_TIMEOUT);
 });
 
 After(async function () {

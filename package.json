@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "chai": "^4.3.8",
+    "dotenv": "^16.3.1",
     "playwright-cucumber": "^1.0.15"
   }
 }

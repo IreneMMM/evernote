@@ -8,7 +8,7 @@
         ],
         "dryRun": false,
         "require": [
-            "src/test/steps/*.js"
+            "src/test/steps/*steps.js"
         ]
         
     }
