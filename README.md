@@ -1,6 +1,8 @@
 # evernote
 Testing framework for evernote application
 
+Скачать и установить Node.js
+
 Установить playwright-framework:
 - npm init playwright@latest
 
