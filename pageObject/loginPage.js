@@ -17,11 +17,11 @@ class LoginPage extends BasePage {
     }
 
     async login(username, password) {
-        console.log("Enter username")
+        console.log(`Enter username`)
         await this.username.fill(username);
         console.log("Click on login button ")
         await this.loginButton.click();
-        console.log("Enter password")
+        console.log(`Enter password`)
         await this.password.fill(password);
         console.log("Click on login button ")
         await this.loginButton.click();

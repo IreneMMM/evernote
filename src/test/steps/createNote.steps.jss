@@ -1,23 +1,17 @@
-const { defineConfig } = require('@playwright/test');
-const config = defineConfig(require('../../../playwright.config'));
-
 const dotenv = require('dotenv');
 dotenv.config();
 
 const { Given, When, Then, Before, After, setDefaultTimeout } = require('@cucumber/cucumber');
 const { chromium } = require("@playwright/test")
 const { expect } = require('chai');
-const { MainPage, LoginPage, HomePage } = require('../../../pageObject/index');
+const { LoginPage, HomePage } = require('../../../pageObject/index');
 const { generateRandomString } = require('../../../utils/util')
-
 
 let browser;
 let page;
-let mainPage, loginPage, homePage;
+let loginPage, homePage;
 const noteTitle = generateRandomString();
 
-
-setDefaultTimeout(process.env.DEFAULT_TIMEOUT);
 
 Before(async function () {
   browser = await chromium.launch({ headless: false });
@@ -29,16 +23,12 @@ After(async function () {
 });
 
 Given('User navigates to login page', async () => {
-  // mainPage = new MainPage(page);
   loginPage = new LoginPage(page);
   await loginPage.navigate();
-  // await mainPage.cookieButton.click();
-  // await mainPage.loginLink.click();
   expect(await page.url()).to.be.equal(process.env.LOGIN_URL);
 });
 
 When('User logins successfully', async function () {
-  // loginPage = new LoginPage(page);
   await loginPage.login(process.env.USER_LOGIN, process.env.USER_PASSWORD);
 });
 
@@ -61,7 +51,7 @@ When('User chooses existing note', async () => {
 
 Then('Note title should match previously created note', async () => {
   const textLocator = await page.frameLocator('#qa-COMMON_EDITOR_IFRAME').locator(`//div[text()="${noteTitle}"]`);
-  const textActual = await textLocator.textContent({timeout: 80000});
+  const textActual = await textLocator.textContent();
   expect(await textActual).to.eql(noteTitle);
 });
 

@@ -5,7 +5,7 @@
   "description": "test framework for evernote",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js"
+    "test": "cucumber-js node ./htmlReportGenerator.js’"
   },
   "author": "irina Menshova",
   "license": "ISC",

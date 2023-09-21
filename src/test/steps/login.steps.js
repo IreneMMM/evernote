@@ -1,5 +1,3 @@
-const { defineConfig } = require('@playwright/test');
-const config = defineConfig(require('../../../playwright.config')); 
 const dotenv = require('dotenv');
 dotenv.config();
 

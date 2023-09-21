@@ -7,10 +7,15 @@
             "src/test/features/"
         ],
         "dryRun": false,
-        "require": [
-            "src/test/steps/*steps.js"
-        ]
-        
+        "require": [           
+            "src/test/steps/*steps.js",
+            "setup/hooks.js"
+        ],
+
+        "format": [
+            "html: evernote/reports/cucumber-report.html",
+            "json: evernote/reports/cucumber-report.json"
+        ]       
     }
 }
 

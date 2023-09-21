@@ -1,0 +1,197 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "user-login;login-with-valid-credentials",
+        "keyword": "Scenario",
+        "line": 8,
+        "name": "Login with valid credentials",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 446246299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "User navigates to application",
+            "match": {
+              "location": "src\\test\\steps\\login.steps.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2370741799
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "User clicks on login link",
+            "match": {
+              "location": "src\\test\\steps\\login.steps.js:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 354469599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "User should be on login page",
+            "match": {
+              "location": "src\\test\\steps\\login.steps.js:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 936399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "User logs in with valid credentials",
+            "match": {
+              "location": "src\\test\\steps\\login.steps.js:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1794930500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "User should be logged in successfully",
+            "match": {
+              "location": "src\\test\\steps\\login.steps.js:49"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 443800
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 243226000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "user-login;login-with-invalid-credentials",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "Login with invalid credentials",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 423690200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "User navigates to application",
+            "match": {
+              "location": "src\\test\\steps\\login.steps.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1677304300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "User clicks on login link",
+            "match": {
+              "location": "src\\test\\steps\\login.steps.js:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 377641900
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "User should be on login page",
+            "match": {
+              "location": "src\\test\\steps\\login.steps.js:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 497099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 13,
+            "name": "User logs in with invalid credentials",
+            "match": {
+              "location": "src\\test\\steps\\login.steps.js:44"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3215219999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "User should receive error message",
+            "match": {
+              "location": "src\\test\\steps\\login.steps.js:54"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 240099
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 188220899
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "user-login",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "User Login",
+    "tags": [],
+    "uri": "src\\test\\features\\login.feature"
+  }
+]

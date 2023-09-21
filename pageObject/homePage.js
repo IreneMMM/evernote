@@ -17,10 +17,10 @@ class HomePage extends BasePage {
 
     async createNote(text, title) {
         console.log("Click on create note button")
-        await this.createNoteButton.click( {timeout: 80000});
-        console.log("Enter note text")
+        await this.createNoteButton.click({timeout: 80000});
+        console.log(`Enter text note - "${text}"`)
         await this.noteBodyInput.type(text);
-        console.log("Enter note title")
+        console.log(`Enter note title - "${title}"`)
         await this.noteTitleInput.type(title, {delay: 100});
     }
 
@@ -33,7 +33,7 @@ class HomePage extends BasePage {
 
     async chooseNote() {
         console.log("Click on allnotes button")
-        await this.allNotesButton.click( {timeout: 80000});
+        await this.allNotesButton.click({timeout: 80000});
         console.log("Click on last note")
         await this.lastNote.click();
     }
