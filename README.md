@@ -1,14 +1,11 @@
-<h1 align="center">Welcome to Evernote testing framework 👋</h1>
-<p>
-  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
-  <a href="#" target="_blank">
-    <img alt="License: ISC" src="https://img.shields.io/badge/License-ISC-yellow.svg" />
-  </a>
-</p>
+<h1 align="center">Evernote testing framework</h1>
 
-> test framework for evernote
+## Description 
 
-## Install
+This testing framework for evernote.com application was created to test the functionality of the application.
+
+## Installation
+
 
 ```sh
 npm install
@@ -16,9 +13,7 @@ npm install
 
 ## Usage
 
-```sh
-npm test
-```
+
 
 ## Run tests
 
@@ -32,9 +27,4 @@ npm run test
 
 * Github: [@IreneMMM](https://github.com/IreneMMM)
 
-## Show your support
 
-Give a ⭐️ if this project helped you!
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
