@@ -29,16 +29,16 @@ After(async function () {
 });
 
 Given('User navigates to login page', async () => {
-  mainPage = new MainPage(page);
+  // mainPage = new MainPage(page);
   loginPage = new LoginPage(page);
-  await mainPage.navigate();
-  await mainPage.cookieButton.click();
-  await mainPage.loginLink.click();
+  await loginPage.navigate();
+  // await mainPage.cookieButton.click();
+  // await mainPage.loginLink.click();
   expect(await page.url()).to.be.equal(process.env.LOGIN_URL);
 });
 
 When('User logins successfully', async function () {
-  loginPage = new LoginPage(page);
+  // loginPage = new LoginPage(page);
   await loginPage.login(process.env.USER_LOGIN, process.env.USER_PASSWORD);
 });
 
