@@ -1,9 +1,9 @@
-Feature: User Login functionality
+Feature: User Login 
 
   Background:
-    Given User Navigate to the application
-    When User click on login link 
-    Then User Navigate to the login page
+    Given User navigates to application
+    When User clicks on login link 
+    Then User should be on login page
 
   Scenario: Login with valid credentials
     When User logs in with valid credentials

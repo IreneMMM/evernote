@@ -1,52 +1,51 @@
+const { defineConfig } = require('@playwright/test');
+const config = defineConfig(require('../../../playwright.config')); 
+const dotenv = require('dotenv');
+dotenv.config();
+
+
 const { Given, When, Then, setDefaultTimeout, Before, After } = require('@cucumber/cucumber');
 const { chromium } = require("@playwright/test")
 const { expect } = require('chai');
-const { MainPage } = require('../../../pageObject/mainPage');
-const { LoginPage } = require('../../../pageObject/loginPage');
-const { HomePage } = require('../../../pageObject/homePage');
+const { MainPage, LoginPage, HomePage } = require('../../../pageObject/index'); 
+
 
 let browser;
-let context;
 let page;
-let mainPage;
-let loginPage;
-let homePage;
-
+let mainPage, loginPage, homePage;
 
 
 Before(async function () {
   browser = await chromium.launch({ headless: false });
-  context = await browser.newContext();
-  page = await context.newPage();
-  page.setDefaultTimeout(process.env.DEFAULT_TIMEOUT);
+  page = await browser.newPage();
 });
 
 After(async function () {
   await browser.close();
 });
 
-Given('User Navigate to the application', async function () {
+Given('User navigates to application', async function () {
   mainPage = new MainPage(page);
   await mainPage.navigate();
   await mainPage.cookieButton.click();
 });
 
-When('User click on login link', async function () {
+When('User clicks on login link', async function () {
   await mainPage.loginLink.click(); 
 });
 
-Then('User Navigate to the login page', async function () {
-  expect(await page.url()).to.be.equal("https://www.evernote.com/Login.action");
+Then('User should be on login page', async function () {
+  expect(await page.url()).to.be.equal(process.env.LOGIN_URL);
 });
 
 When('User logs in with valid credentials', async function () {
   loginPage = new LoginPage(page);
-  await loginPage.login("tt4999241@gmail.com","test@1000");
+  await loginPage.login(process.env.USER_LOGIN, process.env.USER_PASSWORD);
 });
 
 When('User logs in with invalid credentials', async function () {
   loginPage = new LoginPage(page);
-  await loginPage.login("tt4999241@gmail.com","1234")
+  await loginPage.login(process.env.USER_LOGIN,process.env.USER_PASSWORD_INVALID)
 });
 
 Then('User should be logged in successfully',  async function () {

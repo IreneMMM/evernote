@@ -1,9 +1,9 @@
-const { expect } = require('@playwright/test');
+const { BasePage } = require ('./basePage')
 
-exports.LoginPage = class LoginPage {
+class LoginPage extends BasePage {
 
     constructor(page) {
-        this.page = page;
+        super(page);
         this.username = page.locator("#username");
         this.password = page.locator("#password");
         this.loginButton = page.locator("#loginButton");
@@ -12,9 +12,15 @@ exports.LoginPage = class LoginPage {
     }
 
     async login(username, password) {
+        console.log("Enter username")
         await this.username.fill(username);
+        console.log("Click on login button ")
         await this.loginButton.click();
+        console.log("Enter password")
         await this.password.fill(password);
+        console.log("Click on login button ")
         await this.loginButton.click();
     }
  };
+
+module.exports = { LoginPage };

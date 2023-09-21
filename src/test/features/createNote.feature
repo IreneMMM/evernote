@@ -1,16 +1,17 @@
-Feature: Create note functionality
+Feature: Creating note 
 
   Background:
-    Given User Navigates to login page
-    Then User login successfully
-    Given User is on the Home page
+    Given User navigates to login page
+    When User logins successfully
+    Then User is on home page
 
   Scenario: Login, create note, and logout
-    When User create new Note
-    When User logout
-    Then User should be on login page
+    When User creates new note
+    And User logouts
+    Then User should see login page
 
 
   Scenario: Login and open existing note 
-    When User choose an existing note
+    When User chooses existing note
     Then Note title should match previously created note
+  

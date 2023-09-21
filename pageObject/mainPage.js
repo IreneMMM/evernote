@@ -1,16 +1,13 @@
-const {
-    expect
-} = require('@playwright/test');
+const { BasePage } = require ('./basePage')
 
-exports.MainPage = class MainPage {
+class MainPage extends BasePage {
 
     constructor(page) {
-        this.page = page;
+        super(page);
         this.cookieButton = page.locator("button.rounded-sm");
         this.loginLink = page.locator("//a[@href='https://www.evernote.com/Login.action']").first();
     }
-
-    async navigate() {
-        return await this.page.goto('https://www.evernote.com');
-    }
 };
+
+
+module.exports = { MainPage };
