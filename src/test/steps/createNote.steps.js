@@ -48,9 +48,7 @@ Then('User is on home page', async () => {
 });
 
 When('User creates new note', async () => {
-  console.log('created note----', noteTitle)
   await homePage.createNote(process.env.NOTE_TEXT, noteTitle);
-  console.log('entered note----', noteTitle)
 });
 
 When('User logouts', async () => {
@@ -62,15 +60,8 @@ When('User chooses existing note', async () => {
 });
 
 Then('Note title should match previously created note', async () => {
-  console.log('created note----', noteTitle)
-  // const firstResult = await page.frameLocator('#qa-COMMON_EDITOR_IFRAME').locator(`//div[text()="${noteTitle}"]`);
-
-  const textLocator = await page.locator(`//span[text()="${noteTitle}"]`);
-  const textActual = await textLocator.textContent({timeout: 50000});
-
-  console.log('textActual-------', textActual)
-  console.log('noteTitle-------', noteTitle)
-
+  const textLocator = await page.frameLocator('#qa-COMMON_EDITOR_IFRAME').locator(`//div[text()="${noteTitle}"]`);
+  const textActual = await textLocator.textContent({timeout: 80000});
   expect(await textActual).to.eql(noteTitle);
 });
 

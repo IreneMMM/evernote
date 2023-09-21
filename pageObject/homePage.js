@@ -12,17 +12,16 @@ class HomePage extends BasePage {
         this.userMenu = page.locator("#qa-USER_PORTRAIT").first();
         this.logoutLink = page.locator("#qa-ACCOUNT_DROPDOWN_LOGOUT");
         this.allNotesButton = page.locator('//button[contains(@id, "qa-HOME_WIDGET_HEADER_Notes")]');
-        //this.lastNote = page.locator("//button[contains(@id, 'qa-NOTES_SIDEBAR_NOTE')]").first();
-       // this.lastNote = page.locator(`//span[text()="${text}"]`);
+        this.lastNote = page.locator("//button[contains(@id, 'qa-NOTES_SIDEBAR_NOTE')]").first();
     }
 
     async createNote(text, title) {
         console.log("Click on create note button")
         await this.createNoteButton.click( {timeout: 80000});
         console.log("Enter note text")
-        await this.noteBodyInput.fill(text);
+        await this.noteBodyInput.type(text);
         console.log("Enter note title")
-        await this.noteTitleInput.fill(title);
+        await this.noteTitleInput.type(title, {delay: 100});
     }
 
     async logout() {
@@ -35,8 +34,8 @@ class HomePage extends BasePage {
     async chooseNote() {
         console.log("Click on allnotes button")
         await this.allNotesButton.click( {timeout: 80000});
-        // console.log("Click on last note")
-        // await this.lastNote.click();
+        console.log("Click on last note")
+        await this.lastNote.click();
     }
 };
 

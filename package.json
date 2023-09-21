@@ -7,20 +7,15 @@
   "scripts": {
     "test": "cucumber-js"
   },
-  "cucumber-html-reporter": {
-    "jsonFolder": "cucumber-report",
-    "reportFolder": "cucumber-report"
-  },
   "author": "irina Menshova",
   "license": "ISC",
   "devDependencies": {
     "@cucumber/cucumber": "^9.5.1",
-    "@playwright/test": "^1.38.0",
-    "allure-commandline": "^2.24.0",
-    "allure-playwright": "^2.8.1"
+    "@playwright/test": "^1.38.0"
   },
   "dependencies": {
     "chai": "^4.3.8",
+    "cucumber-html-reporter": "^7.1.1",
     "cucumber-playwright": "^1.2.1",
     "dotenv": "^16.3.1"
   }
