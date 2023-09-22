@@ -6,7 +6,7 @@ class BasePage {
 
     async navigate() {
         console.log("Navigate to main page")
-        return await this.page.goto(process.env.BASE_URL);
+        await this.page.goto(process.env.BASE_URL);
     }
 };
 

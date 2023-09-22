@@ -2,10 +2,11 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const { Given, When, Then, Before, After } = require('@cucumber/cucumber');
-const { chromium, playwright } = require("@playwright/test")
+const playwright = require("@playwright/test");
 const { expect } = require('chai');
 const { LoginPage, HomePage } = require('../../../pageObject/index');
 const { generateRandomString } = require('../../../utils/util')
+
 
 let browser;
 let page;
@@ -14,9 +15,10 @@ const noteTitle = generateRandomString();
 
 
 Before(async function () {
-  const isHeadless = process.env.HEADLESS !== 'true';
-  browser = await playwright[process.env.BROWSER_TYPE].launch({ headless: isHeadless });
-  page = await browser.newPage();
+  const isHeadless = process.env.HEADLESS !== 'false';
+  browser = await playwright['chromium'].launch({ headless: isHeadless });
+  context = await browser.newContext();
+  page = await context.newPage();
 });
 
 After(async function () {
@@ -26,7 +28,7 @@ After(async function () {
 Given('User navigates to login page', async () => {
   loginPage = new LoginPage(page);
   await loginPage.navigate();
-  expect(await page.url()).to.be.equal(process.env.LOGIN_URL);
+  expect(await page.url()).to.be.equal(loginPage.url);
 });
 
 When('User logins successfully', async function () {

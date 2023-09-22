@@ -5,9 +5,9 @@ var currentDate = date.getDate() + '_' + (date.getMonth()+1) + '_' + date.getFul
 const options = { 
     brandTitle: "test scenarios",
     theme: "bootstrap",
-    jsonFile: "reports/cucumber_report.json",
-    output: "reports/cucumber_report.html",
-    screenshotsDirectory: "reports/screenshots/",
+    jsonFile: "cucumber-reports/cucumber_report.json",
+    output: "cucumber-reports/cucumber_report.html",
+    screenshotsDirectory: "cucumber-reports/screenshots/",
     reportSuiteAsScenarios: true,
     launchreport: true,
     metadata: {

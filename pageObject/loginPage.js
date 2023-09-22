@@ -1,11 +1,12 @@
-const { BasePage } = require ('./basePage')
+const { BasePage } = require('./basePage')
 
 class LoginPage extends BasePage {
-    
-    static LOGIN_PAGE_URL = "https://www.evernote.com/Login.action";
+
 
     constructor(page) {
         super(page);
+
+        this.url = "https://www.evernote.com/Login.action";
         this.usernameInput = page.locator("#username");
         this.passwordInput = page.locator("#password");
         this.loginButton = page.locator("#loginButton");
@@ -14,8 +15,8 @@ class LoginPage extends BasePage {
     }
 
     async navigate() {
-        console.log("Navigate to login page")
-        return await this.page.goto(process.env.LOGIN_URL);
+        console.log("Navigate to login page");
+        await this.page.goto(this.url);
     }
 
     async login(username, password) {
@@ -28,6 +29,6 @@ class LoginPage extends BasePage {
         console.log("Click on login button ")
         await this.loginButton.click();
     }
- };
+};
 
 module.exports = { LoginPage };

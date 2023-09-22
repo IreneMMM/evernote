@@ -63,7 +63,7 @@ npm run test
 
 # Check reports
 
-After running ```npm run test``` you can see the test report in the `reports` folder.
+After running ```npm run test``` you can see the test report in the `cucumber-reports` folder.
 
 
 # Author
