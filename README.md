@@ -53,11 +53,10 @@ The framework is designed for:
   * setup/hooks.js - Cucumber hooks file
   * node_modules/ - dependencies for the framework
   * .env - constants for the test environment
-      ** BASE_URL and LOGIN_URL for application 
+      ** BASE_URL - for application 
       ** DEFAULT_TIMEOUT - waiting time for page elements
       ** BROWSER_TYPE - browser type for testing
       ** USER_LOGIN and USER_PASSWORD/USER_PASSWORD_INVALID (credentials for logging in to Evernote)
-      ** NOTE_TEXT - text for creating note's body
 
 
 # Run tests

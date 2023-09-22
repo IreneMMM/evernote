@@ -1,8 +1,8 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
-const { Given, When, Then, Before, After, setDefaultTimeout } = require('@cucumber/cucumber');
-const { chromium } = require("@playwright/test")
+const { Given, When, Then, Before, After } = require('@cucumber/cucumber');
+const { chromium, playwright } = require("@playwright/test")
 const { expect } = require('chai');
 const { LoginPage, HomePage } = require('../../../pageObject/index');
 const { generateRandomString } = require('../../../utils/util')
@@ -14,7 +14,8 @@ const noteTitle = generateRandomString();
 
 
 Before(async function () {
-  browser = await chromium.launch({ headless: false });
+  const isHeadless = process.env.HEADLESS !== 'true';
+  browser = await playwright[process.env.BROWSER_TYPE].launch({ headless: isHeadless });
   page = await browser.newPage();
 });
 
@@ -32,13 +33,13 @@ When('User logins successfully', async function () {
   await loginPage.login(process.env.USER_LOGIN, process.env.USER_PASSWORD);
 });
 
-Then('User is on home page', async () => {
+Then('User should be on home page', async () => {
   homePage = new HomePage(page);
-  expect(await homePage.userNav).to.exist;
+  expect(await homePage.userMenu).to.exist;
 });
 
-When('User creates new note', async () => {
-  await homePage.createNote(process.env.NOTE_TEXT, noteTitle);
+When('User creates new note {string}', async () => {
+  await homePage.createNote(note_text, noteTitle);
 });
 
 When('User logouts', async () => {

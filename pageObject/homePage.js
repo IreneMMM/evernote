@@ -5,11 +5,11 @@ class HomePage extends BasePage {
         super(page);
         // Long locator is used to reduces test flakiness
         this.createNoteButton = page.locator('//div[contains(@id,"qa-HOME_WIDGET_CONTROL_Notes")]//button');
-        this.userNav = page.locator("#qa-NAV_USER");
+        this.userMenu = page.locator("#qa-NAV_USER");
         this.frame = page.frameLocator('#qa-COMMON_EDITOR_IFRAME');
         this.noteBodyInput = page.frameLocator('#qa-COMMON_EDITOR_IFRAME').locator("#en-note");
         this.noteTitleInput = page.frameLocator('#qa-COMMON_EDITOR_IFRAME').locator("//textarea[contains(@class,'dSbRl')]");
-        this.userMenu = page.locator("#qa-USER_PORTRAIT").first();
+        this.userIcon = page.locator("#qa-USER_PORTRAIT").first();
         this.logoutLink = page.locator("#qa-ACCOUNT_DROPDOWN_LOGOUT");
         this.allNotesButton = page.locator('//button[contains(@id, "qa-HOME_WIDGET_HEADER_Notes")]');
         this.lastNote = page.locator("//button[contains(@id, 'qa-NOTES_SIDEBAR_NOTE')]").first();
@@ -26,7 +26,7 @@ class HomePage extends BasePage {
 
     async logout() {
         console.log("Click on user menu")
-        await this.userMenu.click();
+        await this.userIcon.click();
         console.log("Click on logout button")
         await this.logoutLink.click();
     }

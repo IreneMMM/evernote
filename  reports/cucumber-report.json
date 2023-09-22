@@ -4,25 +4,26 @@
     "elements": [
       {
         "description": "",
-        "id": "creating-note;login,-create-note,-and-logout",
+        "id": "creating-note;login-and-write-a-note-followed-by-a-logout",
         "keyword": "Scenario",
         "line": 8,
-        "name": "Login, create note, and logout",
+        "name": "Login and write a note followed by a logout",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
-              "status": "passed",
-              "duration": 416661800
+              "status": "failed",
+              "duration": 960200,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'chromium')\n    at World.<anonymous> (D:\\evernote\\evernote\\src\\test\\steps\\createNote.steps.js:18:29)"
             }
           },
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
-              "status": "passed",
-              "duration": 422560899
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
@@ -31,11 +32,11 @@
             "line": 4,
             "name": "User navigates to login page",
             "match": {
-              "location": "src\\test\\steps\\createNote.steps.js:25"
+              "location": "src\\test\\steps\\createNote.steps.js:26"
             },
             "result": {
-              "status": "passed",
-              "duration": 1432768800
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
@@ -44,37 +45,37 @@
             "line": 5,
             "name": "User logins successfully",
             "match": {
-              "location": "src\\test\\steps\\createNote.steps.js:31"
+              "location": "src\\test\\steps\\createNote.steps.js:32"
             },
             "result": {
-              "status": "passed",
-              "duration": 1047367100
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 6,
-            "name": "User is on home page",
+            "name": "User should be on home page",
             "match": {
-              "location": "src\\test\\steps\\createNote.steps.js:35"
+              "location": "src\\test\\steps\\createNote.steps.js:36"
             },
             "result": {
-              "status": "passed",
-              "duration": 409500
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
             "line": 9,
-            "name": "User creates new note",
+            "name": "User creates new note \"This is a test note\"",
             "match": {
-              "location": "src\\test\\steps\\createNote.steps.js:40"
+              "location": "src\\test\\steps\\createNote.steps.js:41"
             },
             "result": {
-              "status": "passed",
-              "duration": 66707717299
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
@@ -83,11 +84,11 @@
             "line": 10,
             "name": "User logouts",
             "match": {
-              "location": "src\\test\\steps\\createNote.steps.js:44"
+              "location": "src\\test\\steps\\createNote.steps.js:45"
             },
             "result": {
-              "status": "passed",
-              "duration": 554405799
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
@@ -96,27 +97,29 @@
             "line": 11,
             "name": "User should see login page",
             "match": {
-              "location": "src\\test\\steps\\createNote.steps.js:58"
+              "location": "src\\test\\steps\\createNote.steps.js:59"
             },
             "result": {
-              "status": "passed",
-              "duration": 211299
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
             "keyword": "After",
             "hidden": true,
             "result": {
-              "status": "passed",
-              "duration": 92757899
+              "status": "failed",
+              "duration": 111000,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'close')\n    at World.<anonymous> (D:\\evernote\\evernote\\src\\test\\steps\\login.steps.js:21:17)"
             }
           },
           {
             "keyword": "After",
             "hidden": true,
             "result": {
-              "status": "passed",
-              "duration": 231941300
+              "status": "failed",
+              "duration": 103699,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'close')\n    at World.<anonymous> (D:\\evernote\\evernote\\src\\test\\steps\\createNote.steps.js:23:17)"
             }
           }
         ],
@@ -127,23 +130,24 @@
         "description": "",
         "id": "creating-note;login-and-open-existing-note",
         "keyword": "Scenario",
-        "line": 14,
+        "line": 13,
         "name": "Login and open existing note",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
-              "status": "passed",
-              "duration": 351060899
+              "status": "failed",
+              "duration": 96899,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'chromium')\n    at World.<anonymous> (D:\\evernote\\evernote\\src\\test\\steps\\createNote.steps.js:18:29)"
             }
           },
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
-              "status": "passed",
-              "duration": 372169600
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
@@ -152,11 +156,11 @@
             "line": 4,
             "name": "User navigates to login page",
             "match": {
-              "location": "src\\test\\steps\\createNote.steps.js:25"
+              "location": "src\\test\\steps\\createNote.steps.js:26"
             },
             "result": {
-              "status": "passed",
-              "duration": 1040900900
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
@@ -165,66 +169,68 @@
             "line": 5,
             "name": "User logins successfully",
             "match": {
-              "location": "src\\test\\steps\\createNote.steps.js:31"
+              "location": "src\\test\\steps\\createNote.steps.js:32"
             },
             "result": {
-              "status": "passed",
-              "duration": 1023780900
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 6,
-            "name": "User is on home page",
+            "name": "User should be on home page",
             "match": {
-              "location": "src\\test\\steps\\createNote.steps.js:35"
+              "location": "src\\test\\steps\\createNote.steps.js:36"
             },
             "result": {
-              "status": "passed",
-              "duration": 271799
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 15,
+            "line": 14,
             "name": "User chooses existing note",
             "match": {
-              "location": "src\\test\\steps\\createNote.steps.js:48"
+              "location": "src\\test\\steps\\createNote.steps.js:49"
             },
             "result": {
-              "status": "passed",
-              "duration": 58416964299
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 16,
+            "line": 15,
             "name": "Note title should match previously created note",
             "match": {
-              "location": "src\\test\\steps\\createNote.steps.js:52"
+              "location": "src\\test\\steps\\createNote.steps.js:53"
             },
             "result": {
-              "status": "passed",
-              "duration": 1576828299
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
             "keyword": "After",
             "hidden": true,
             "result": {
-              "status": "passed",
-              "duration": 104069700
+              "status": "failed",
+              "duration": 175999,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'close')\n    at World.<anonymous> (D:\\evernote\\evernote\\src\\test\\steps\\login.steps.js:21:17)"
             }
           },
           {
             "keyword": "After",
             "hidden": true,
             "result": {
-              "status": "passed",
-              "duration": 221682899
+              "status": "failed",
+              "duration": 88299,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'close')\n    at World.<anonymous> (D:\\evernote\\evernote\\src\\test\\steps\\createNote.steps.js:23:17)"
             }
           }
         ],
@@ -244,25 +250,26 @@
     "elements": [
       {
         "description": "",
-        "id": "user-login;login-with-valid-credentials",
+        "id": "user-login;successful-login-using-email",
         "keyword": "Scenario",
         "line": 8,
-        "name": "Login with valid credentials",
+        "name": "Successful login using email",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
-              "status": "passed",
-              "duration": 357601000
+              "status": "failed",
+              "duration": 114499,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'chromium')\n    at World.<anonymous> (D:\\evernote\\evernote\\src\\test\\steps\\createNote.steps.js:18:29)"
             }
           },
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
-              "status": "passed",
-              "duration": 390024600
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
@@ -271,11 +278,11 @@
             "line": 4,
             "name": "User navigates to application",
             "match": {
-              "location": "src\\test\\steps\\login.steps.js:25"
+              "location": "src\\test\\steps\\login.steps.js:24"
             },
             "result": {
-              "status": "passed",
-              "duration": 2276942299
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
@@ -284,11 +291,11 @@
             "line": 5,
             "name": "User clicks on login link",
             "match": {
-              "location": "src\\test\\steps\\login.steps.js:31"
+              "location": "src\\test\\steps\\login.steps.js:30"
             },
             "result": {
-              "status": "passed",
-              "duration": 357866999
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
@@ -297,11 +304,11 @@
             "line": 6,
             "name": "User should be on login page",
             "match": {
-              "location": "src\\test\\steps\\login.steps.js:35"
+              "location": "src\\test\\steps\\login.steps.js:34"
             },
             "result": {
-              "status": "passed",
-              "duration": 178200
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
@@ -310,11 +317,11 @@
             "line": 9,
             "name": "User logs in with valid credentials",
             "match": {
-              "location": "src\\test\\steps\\login.steps.js:39"
+              "location": "src\\test\\steps\\login.steps.js:38"
             },
             "result": {
-              "status": "passed",
-              "duration": 1577061800
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
@@ -323,27 +330,29 @@
             "line": 10,
             "name": "User should be logged in successfully",
             "match": {
-              "location": "src\\test\\steps\\login.steps.js:49"
+              "location": "src\\test\\steps\\login.steps.js:48"
             },
             "result": {
-              "status": "passed",
-              "duration": 402000
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
             "keyword": "After",
             "hidden": true,
             "result": {
-              "status": "passed",
-              "duration": 174661700
+              "status": "failed",
+              "duration": 167400,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'close')\n    at World.<anonymous> (D:\\evernote\\evernote\\src\\test\\steps\\login.steps.js:21:17)"
             }
           },
           {
             "keyword": "After",
             "hidden": true,
             "result": {
-              "status": "passed",
-              "duration": 108344599
+              "status": "failed",
+              "duration": 182300,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'close')\n    at World.<anonymous> (D:\\evernote\\evernote\\src\\test\\steps\\createNote.steps.js:23:17)"
             }
           }
         ],
@@ -352,25 +361,26 @@
       },
       {
         "description": "",
-        "id": "user-login;login-with-invalid-credentials",
+        "id": "user-login;unsuccessful-login-using-email",
         "keyword": "Scenario",
         "line": 12,
-        "name": "Login with invalid credentials",
+        "name": "Unsuccessful login using email",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
-              "status": "passed",
-              "duration": 382899499
+              "status": "failed",
+              "duration": 116899,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'chromium')\n    at World.<anonymous> (D:\\evernote\\evernote\\src\\test\\steps\\createNote.steps.js:18:29)"
             }
           },
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
-              "status": "passed",
-              "duration": 379222699
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
@@ -379,11 +389,11 @@
             "line": 4,
             "name": "User navigates to application",
             "match": {
-              "location": "src\\test\\steps\\login.steps.js:25"
+              "location": "src\\test\\steps\\login.steps.js:24"
             },
             "result": {
-              "status": "passed",
-              "duration": 2244499399
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
@@ -392,11 +402,11 @@
             "line": 5,
             "name": "User clicks on login link",
             "match": {
-              "location": "src\\test\\steps\\login.steps.js:31"
+              "location": "src\\test\\steps\\login.steps.js:30"
             },
             "result": {
-              "status": "passed",
-              "duration": 364335799
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
@@ -405,11 +415,11 @@
             "line": 6,
             "name": "User should be on login page",
             "match": {
-              "location": "src\\test\\steps\\login.steps.js:35"
+              "location": "src\\test\\steps\\login.steps.js:34"
             },
             "result": {
-              "status": "passed",
-              "duration": 134000
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
@@ -418,11 +428,11 @@
             "line": 13,
             "name": "User logs in with invalid credentials",
             "match": {
-              "location": "src\\test\\steps\\login.steps.js:44"
+              "location": "src\\test\\steps\\login.steps.js:43"
             },
             "result": {
-              "status": "passed",
-              "duration": 3385374000
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
@@ -431,27 +441,29 @@
             "line": 14,
             "name": "User should receive error message",
             "match": {
-              "location": "src\\test\\steps\\login.steps.js:54"
+              "location": "src\\test\\steps\\login.steps.js:53"
             },
             "result": {
-              "status": "passed",
-              "duration": 247799
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
             "keyword": "After",
             "hidden": true,
             "result": {
-              "status": "passed",
-              "duration": 165877700
+              "status": "failed",
+              "duration": 225299,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'close')\n    at World.<anonymous> (D:\\evernote\\evernote\\src\\test\\steps\\login.steps.js:21:17)"
             }
           },
           {
             "keyword": "After",
             "hidden": true,
             "result": {
-              "status": "passed",
-              "duration": 106273800
+              "status": "failed",
+              "duration": 167500,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'close')\n    at World.<anonymous> (D:\\evernote\\evernote\\src\\test\\steps\\createNote.steps.js:23:17)"
             }
           }
         ],

@@ -1,12 +1,10 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
-
 const { Given, When, Then, setDefaultTimeout, Before, After } = require('@cucumber/cucumber');
-const { chromium } = require("@playwright/test")
+const { chromium, playwright } = require("@playwright/test")
 const { expect } = require('chai');
-const { MainPage, LoginPage, HomePage } = require('../../../pageObject/index'); 
-
+const { MainPage, LoginPage, HomePage } = require('../../../pageObject/index');
 
 let browser;
 let page;
@@ -14,7 +12,8 @@ let mainPage, loginPage, homePage;
 
 
 Before(async function () {
-  browser = await chromium.launch({ headless: false });
+  const isHeadless = process.env.HEADLESS !== 'true';
+  browser = await playwright[process.env.BROWSER_TYPE].launch({ headless: isHeadless });
   page = await browser.newPage();
 });
 
@@ -29,7 +28,7 @@ Given('User navigates to application', async function () {
 });
 
 When('User clicks on login link', async function () {
-  await mainPage.loginLink.click(); 
+  await mainPage.loginLink.click();
 });
 
 Then('User should be on login page', async function () {
@@ -43,14 +42,14 @@ When('User logs in with valid credentials', async function () {
 
 When('User logs in with invalid credentials', async function () {
   loginPage = new LoginPage(page);
-  await loginPage.login(process.env.USER_LOGIN,process.env.USER_PASSWORD_INVALID)
+  await loginPage.login(process.env.USER_LOGIN, process.env.USER_PASSWORD_INVALID)
 });
 
-Then('User should be logged in successfully',  async function () {
+Then('User should be logged in successfully', async function () {
   homePage = new HomePage(page);
   expect(await homePage.userNav).to.exist;
 });
 
-Then('User should receive error message',  async function () {
+Then('User should receive error message', async function () {
   expect(await loginPage.errorMessage).to.exist;
 });
