@@ -1,7 +1,7 @@
 <h1 align="center">
 Playwright with CucumberJS test automation framework  for Evernote</h1>
 
-## Description 
+# Description 
 
 This is an automated testing framework for the Evernote web application (https://www.evernote.com/). It uses Playwright, Cucumber and JavaScript to test core functionality like login, creating notes, and verifying notes.
 
@@ -11,13 +11,13 @@ The framework is designed for:
   - Readable BDD-style tests with Cucumber
   - Page object pattern for abstraction
 
-## Project setup:
+# Project setup:
 
-  # Precondition: 
+  ## Precondition: 
 
     Node JS should be installed.
 
-  # Installation:
+  ## Installation:
 
     Playwright
   * To install Playwright: `npm install playwright --save-dev`
@@ -60,12 +60,20 @@ The framework is designed for:
       ** NOTE_TEXT - text for creating note's body
 
 
-## Run tests
+# Run tests
+
 ```sh
 npm run test
 ```
 
-## Author
+# Check reports
+
+```sh
+After running ```npm run test```, you can see the test report in the ```reports``` folder.
+```
+
+
+# Author
 
 👤 **Irina Menshova**
 
