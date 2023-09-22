@@ -34,7 +34,9 @@ The framework is designed for:
 ## Framework Structure
 
   * cucumber.json - Cucumber config file
-  * setup/hooks.js - Cucumber hooks file
+  * package.json / package-lock.json - dependencies and scripts for the framework
+  * htmlReportGenerator.js - script for generating test reports in html format
+  * reports/ - folder for test reports in html or json format
   * src/features/ - Cucumber feature files
       ** createNote.feature - Feature file for creating notes
       ** login.feature - Feature file for logging in to Evernote
@@ -48,21 +50,20 @@ The framework is designed for:
       ** mainPage.js - Main page object
       ** index.js - common file for all page objects
   * utils/util.js - Utility functions (function for string generation)
+  * setup/hooks.js - Cucumber hooks file
+  * node_modules/ - dependencies for the framework
   * .env - constants for the test environment
       ** BASE_URL and LOGIN_URL for application 
       ** DEFAULT_TIMEOUT - waiting time for page elements
       ** BROWSER_TYPE - browser type for testing
       ** USER_LOGIN and USER_PASSWORD/USER_PASSWORD_INVALID (credentials for logging in to Evernote)
       ** NOTE_TEXT - text for creating note's body
-  *  package.json - dependencies and scripts for the framework
+
 
 ## Run tests
 ```sh
 npm run test
 ```
-
-## View the HTML report:
-
 
 ## Author
 
