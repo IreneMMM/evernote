@@ -3,7 +3,8 @@ Playwright with CucumberJS test automation framework  for Evernote</h1>
 
 # Description 
 
-This is an automated testing framework for the Evernote web application (https://www.evernote.com/). It uses Playwright, Cucumber and JavaScript to test core functionality like login, creating notes, and verifying notes.
+This is an automated testing framework for the Evernote web application (https://www.evernote.com/). 
+It uses Playwright, Cucumber and JavaScript to test core functionality like login, creating notes, and verifying notes.
 
 The framework is designed for:
 
@@ -15,20 +16,15 @@ The framework is designed for:
 
   ## Precondition: 
 
-    Node JS should be installed.
+    Node.js should be installed.
 
   ## Installation:
 
-    Playwright
-  * To install Playwright: `npm install playwright --save-dev`
-    Cucumber
-  * To install Cucumber: `npm install cucumber --save-dev`
-    Cucumber-Playwright
-  * To install Cucumber: `npm install cucumber-playwright --save-dev`
-    Chai
-  * To install Chai: `npm install chai --save-dev`
-    Dotenv
-  * To install Dotenv: `npm install dotenv --save-dev`
+  * Playwright - To install Playwright: `npm install playwright --save-dev`
+  * Cucumber - To install Cucumber: `npm install cucumber --save-dev`
+  * Cucumber-Playwright - To install Cucumber: `npm install cucumber-playwright --save-dev`
+  * Chai - To install Chai: `npm install chai --save-dev`
+  * Dotenv- To install Dotenv: `npm install dotenv --save-dev`
 
 
 ## Framework Structure
@@ -68,9 +64,7 @@ npm run test
 
 # Check reports
 
-```sh
-After running ```npm run test```, you can see the test report in the ```reports``` folder.
-```
+After running ```npm run test``` you can see the test report in the `reports` folder.
 
 
 # Author
