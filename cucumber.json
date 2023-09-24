@@ -13,8 +13,8 @@
         ],
 
         "format": [
-            "html: cucumber-reports/cucumber-report.html",
-            "json: cucumber-reports/cucumber-report.json"
+            "html:cucumber-reports/cucumber-report.html",
+            "json:cucumber-reports/cucumber-report.json"
         ]       
     }
 }

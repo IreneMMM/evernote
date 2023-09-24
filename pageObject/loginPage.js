@@ -2,7 +2,6 @@ const { BasePage } = require('./basePage')
 
 class LoginPage extends BasePage {
 
-
     constructor(page) {
         super(page);
 
@@ -22,11 +21,11 @@ class LoginPage extends BasePage {
     async login(username, password) {
         console.log(`Enter username`)
         await this.usernameInput.fill(username);
-        console.log("Click on login button ")
+        console.log("Click on login button")
         await this.loginButton.click();
         console.log(`Enter password`)
         await this.passwordInput.fill(password);
-        console.log("Click on login button ")
+        console.log("Click on login button")
         await this.loginButton.click();
     }
 };

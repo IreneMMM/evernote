@@ -1,7 +1,7 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
-const { Given, When, Then, setDefaultTimeout, Before, After } = require('@cucumber/cucumber');
+const { Given, When, Then, Before, After, Status } = require('@cucumber/cucumber');
 const playwright = require("@playwright/test");
 const { expect } = require('chai');
 const { MainPage, LoginPage, HomePage } = require('../../../pageObject/index');
@@ -19,7 +19,12 @@ Before(async function () {
   page = await context.newPage();
 });
 
-After(async function () {
+After(async function (scenario) {
+  if (scenario.result.status === Status.FAILED) {
+    const screenshot = await page.screenshot({
+      path: `reports/screenshots/failed-scenario-${scenario.pickle.name}.png`,
+    });
+  }
   await browser.close();
 });
 
