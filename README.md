@@ -32,7 +32,7 @@ The framework is designed for:
   * cucumber.json - Cucumber config file
   * package.json / package-lock.json - dependencies and scripts for the framework
   * htmlReportGenerator.js - script for generating test reports in html format
-  * reports/ - folder for test reports in html or json format
+  * cucumber-reports/ - folder for test reports in html or json format
   * src/features/ - Cucumber feature files
       ** createNote.feature - Feature file for creating notes
       ** login.feature - Feature file for logging in to Evernote
